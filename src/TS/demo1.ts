@@ -8,8 +8,6 @@ const age = 1
 
 document.body.innerHTML = greeter(user, age);
 
-let y: any = '1'
-y = 1
 
 // const obj: object = 1
 // console.log(obj.toFixed(2))
@@ -75,3 +73,25 @@ mySearch = function (src: string, sub: string): boolean {
   const result = src.search(sub);
   return result > -1;
 }
+
+interface StringArray {
+  [index: number]: string;
+}
+
+let myArray: StringArray;
+myArray = ["Bob", "Fred"];
+
+let myStr: string = myArray[0];
+
+//泛型
+function identity<T>(arg: T): T {
+  // console.log(T.length)//因为不确定传入的类型是否具有length属性
+  return arg;
+}
+console.log(identity<string>('string'), 'identity')
+
+function loggingIdentity<T>(arg: Array<T>): Array<T> {
+  console.log(arg.length);  // Array has a .length, so no more error
+  return arg;
+}
+
