@@ -69,3 +69,9 @@ const mySquare = createSquare({ color: "black" });
 interface SearchFunc {
   (source: string, subString: string): boolean;
 }
+
+let mySearch: SearchFunc;
+mySearch = function (src: string, sub: string): boolean {
+  const result = src.search(sub);
+  return result > -1;
+}
